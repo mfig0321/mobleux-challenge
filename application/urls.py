@@ -31,6 +31,7 @@ urlpatterns = [
     path("accounts/", include("django.contrib.auth.urls")),
     # Applications Urls
     path('', views.index, name='index'),
+    path('', include('apialbums.urls')),
     path('success/', views.save_success, name='success'),
     path('albums/', views.my_albums, name='my-albums'),
     path('albums/<int:pk>/', views.upload_image, name='album-detail'),

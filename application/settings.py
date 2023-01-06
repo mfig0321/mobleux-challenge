@@ -43,6 +43,7 @@ class base(Configuration):
 
         # local apps
         'album',
+        'apialbums',
 
         # Third Party
         'corsheaders',

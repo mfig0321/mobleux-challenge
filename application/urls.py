@@ -29,10 +29,11 @@ from health import views as health_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("accounts/", include("django.contrib.auth.urls")),
-
     # Applications Urls
     path('', views.index, name='index'),
     path('success/', views.save_success, name='success'),
+    path('albums/', views.my_albums, name='my-albums'),
+    path('albums/<int:pk>/', views.upload_image, name='album-detail'),
     path('health/', health_views.HealthCheckEndpoint.as_view(), name='health'),
 ]
 if settings.DEBUG:

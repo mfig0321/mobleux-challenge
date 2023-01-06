@@ -19,5 +19,9 @@ class Album(models.Model):
 class AlbumImage(models.Model):
     """Model for Images"""
 
+    album = models.ForeignKey(
+        Album,
+        on_delete=models.CASCADE
+    )
     title = models.CharField(max_length=256)
     image = models.ImageField(upload_to='uploads/')

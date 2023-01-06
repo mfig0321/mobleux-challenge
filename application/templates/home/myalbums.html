@@ -1,0 +1,6 @@
+<!DOCTYPE html>
+<h1>My Albums</h1>
+
+{% for album in albums %}
+    <div><a href="{% url 'album-detail' album.id %}">{{ album.name }}</a></div>
+{% endfor %}

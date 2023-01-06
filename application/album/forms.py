@@ -9,4 +9,12 @@ class AlbumForm(forms.ModelForm):
 
     class Meta:
         model = models.Album
-        fields = ['user', 'name', 'public']
+        fields = ['name', 'public']
+
+
+class AlbumImageForm(forms.ModelForm):
+    """Form for album images"""
+
+    class Meta:
+        model = models.AlbumImage
+        fields = ['title', 'image']

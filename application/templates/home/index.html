@@ -1,9 +1,18 @@
 <!DOCTYPE html>
 <h1>HOME</h1>
 <h2>Create Album</h2>
-<form method="post" novalidate>
-    {% csrf_token %}
-    {{ form }}
-    <button type="submit">Submit</button>
-</form>
+{% block content %}
+{% if user.is_authenticated %}
+    <form method="post" novalidate>
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Submit</button>
+    </form>
+
+    <h3><a href="albums">My Albums</a></h3>
+{% else %}
+    <p>You are not logged in</p>
+    <a href="{% url 'login' %}">Log In</a>
+{% endif %}
+{% endblock %}
 

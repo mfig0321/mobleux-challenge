@@ -42,7 +42,7 @@ class base(Configuration):
         'django.contrib.staticfiles',
 
         # local apps
-
+        'album',
 
         # Third Party
         'corsheaders',
@@ -67,7 +67,7 @@ class base(Configuration):
     TEMPLATES = [
         {
             'BACKEND': 'django.template.backends.django.DjangoTemplates',
-            'DIRS': [],
+            'DIRS': [BASE_DIR / "application/templates"],
             'APP_DIRS': True,
             'OPTIONS': {
                 'context_processors': [
@@ -79,6 +79,8 @@ class base(Configuration):
             },
         },
     ]
+
+    LOGIN_REDIRECT_URL = "/"
 
     WSGI_APPLICATION = 'wsgi.application'
 
@@ -138,6 +140,9 @@ class base(Configuration):
         'http://localhost:3000',
         'http://localhost:8081'
     )
+
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+    MEDIA_URL = '/media/'
 
 
 class dev(base):

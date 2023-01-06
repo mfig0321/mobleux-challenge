@@ -25,6 +25,7 @@ from health import views as health_views
 # Setup the URLs and include login URLs for the browsable API.
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("accounts/", include("django.contrib.auth.urls")),
 
     # Applications Urls
     path('', health_views.HealthCheckEndpoint.as_view(), name='health'),

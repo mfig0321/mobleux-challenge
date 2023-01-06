@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<h1>HOME</h1>
+<h2>Create Album</h2>
+<form method="post" novalidate>
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit">Submit</button>
+</form>
+

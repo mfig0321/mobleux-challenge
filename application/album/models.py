@@ -20,4 +20,4 @@ class AlbumImage(models.Model):
     """Model for Images"""
 
     title = models.CharField(max_length=256)
-    image = models.ImageField(upload_to='uploads')
+    image = models.ImageField(upload_to='uploads/')
